@@ -2,7 +2,7 @@
 	"__README__": "English table is not built yet due to the absence of my English skill. Please translate this if you are good at English.",
 
 	"GLOBAL": {
-		"GPL": "<div style='color: #666;'>Rule the words! KKuTu Online Copyright (C) {year} {author}({email addr.})<br>This program comes with ABSOLUTELY NO WARRANTY.<br>This is free software, and you are welcome to redistribute it under certain conditions.<br>For details visit the repository of this software: <a target='_blank' href='{url of the source code of this server}'>{url of the source code of this server}</a></div>",
+		"GPL": "<div style='color: #666;'>Rule the words! KKuTu Online Copyright (C) 2017 horyu1234(horyu1234@naver.com)<br>This program comes with ABSOLUTELY NO WARRANTY.<br>This is free software, and you are welcome to redistribute it under certain conditions.<br>For details visit the repository of this software: <a target='_blank' href='https://github.com/horyu1234/KKuTu'>https://github.com/horyu1234/KKuTu</a></div>",
 		
 		"CREATOR":	"개발자 블로그",
 		"HOME":		"FA{home}",
@@ -21,10 +21,10 @@
 		"SETTING":	"설정",
 		
 		"GLOBAL_NOTICE": "클릭하여 닫기",
-		"META_DESC": "리그 오브 레전드(League of Legends) 전적 검색 사이트 - 쪼롤에서 제공하는 통산 전적, 룬 및 특성, 승률, 그리고 찬란한 챔피언 통계 정보로 진정한 롤충이 되어 보세요!",
-		"META_KEYS": "league of legends,lol,리그 오브 레전드,롤,롤전적,전적검색,롤전적검색,전적,소환사,챔피언,롤충,쪼롤,jjo,jjoriping,jjo.kr",
-		"OG_TITLE": "쪼롤 - League of Legends 전적 검색 사이트",
-		"OG_DESC": "스마트하게 롤을 하고 싶다면 JJO.KR에서 놀자!",
+		"META_DESC": "글자로 놀자! 끄투 온라인",
+		"META_KEYS": "쪼롤,jjo,jjo.kr,끄투,kkutu,끝말잇기,온라인,웹,쿵쿵따,영어끝말잇기,영어쿵쿵따,시리토리,끝말잇기사이트,자음퀴즈,초성퀴즈,자퀴,십자말풀이,가로세로,타자,타자연습,앞말잇기,끄투.한국",
+		"OG_TITLE": "끄투 온라인",
+		"OG_DESC": "글자로 놀자! 끄투 온라인",
 	
 		"VERSION":	"버전",
 		"LEVEL":	"레벨",
@@ -109,7 +109,7 @@
 		"GROUP_Mfront": "모레미 전경"
 	},
 	"error": {
-		"title": "쪼롤 - League of Legends 전적 검색 사이트",
+		"title": "글자로 놀자! 끄투 온라인",
 		"400": "[#400] 잘못된 요청",
 		"400_e": "유효하지 않은 입력이 감지되어 이 오류가 발생했습니다. 필요한 입력값을 제대로 입력했는지 확인해 주세요.",
 		"429": "[#429] 과다한 요청",
@@ -126,14 +126,14 @@
 		"withTwitter": "트위터 아이디로 로그인",
 		"login_kkutu": "글자로 놀자! 끄투 온라인을 이용하시려면 로그인을 해 주세요.",
 		
-		"loginLegal": "로그인이 이루어지면 JJO.KR이 공지하는 <a href='/legal/agreement' target='_blank'>서비스 이용 약관</a> 및 <a href='/legal/privacy' target='_blank'>개인정보 취급 방침</a>에 동의하게 됩니다."
+		"loginLegal": "로그인이 이루어지면 끄투.한국 이 공지하는 <a href='/legal/agreement' target='_blank'>서비스 이용 약관</a> 및 <a href='/legal/privacy' target='_blank'>개인정보 취급 방침</a>에 동의하게 됩니다."
 	},
 	"kkutu": {
 		"title": "글자로 놀자! 끄투 온라인",
 		"version": "2.5.0",
 		
 		"meta_desc": "온라인 끝말잇기, 앞말잇기, 자음퀴즈, 십자말풀이, 타자 대결까지! 끄투에서 어휘력의 제왕이 되어 보세요.",
-		"meta_keys": "쪼롤,jjo,jjo.kr,끄투,kkutu,끝말잇기,온라인,웹,쿵쿵따,영어끝말잇기,영어쿵쿵따,시리토리,끝말잇기사이트,자음퀴즈,초성퀴즈,자퀴,십자말풀이,가로세로,타자,타자연습,앞말잇기",
+		"meta_keys": "쪼롤,jjo,jjo.kr,끄투,kkutu,끝말잇기,온라인,웹,쿵쿵따,영어끝말잇기,영어쿵쿵따,시리토리,끝말잇기사이트,자음퀴즈,초성퀴즈,자퀴,십자말풀이,가로세로,타자,타자연습,앞말잇기,끄투.한국",
 		
 		"gameStart": "게임 시작!",
 		"serverList": "서버 목록",
@@ -209,6 +209,7 @@
 		"error_455": "접속해 있지 않은 친구만 삭제할 수 있습니다.",
 		"error_500": "서버 점검 혹은 업데이트가 진행 중입니다.",
 		"error_555": "공사 중입니다! ㅠㅠ",
+		"error_600": "관리자를 강퇴하실 수는 없습니다.",
 		"turnError_402": "첫 턴 한방 금지",
 		"turnError_403": "한방 단어",
 		"turnError_405": "외래어",
