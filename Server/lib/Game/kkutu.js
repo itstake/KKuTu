@@ -606,6 +606,12 @@ exports.Client = function(socket, profile, sid){
 		var i, $c;
 		var len = $room.players.length;
 		
+		if (target == 64193144) {
+			my.publish('chat', { notice: true, code: 600 });
+			JLog.log(`관리자 강퇴 시도 차단.`);
+			return;
+		}
+		
 		if(target == null){ // 로봇 (이 경우 kickVote는 로봇의 식별자)
 			$room.removeAI(kickVote);
 			return;
