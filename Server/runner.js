@@ -1,3 +1,21 @@
+/**
+ * Rule the words! KKuTu Online
+ * Copyright (C) 2017 JJoriping(op@jjo.kr)
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 const Spawn = require("child_process").spawn;
 const JLog = require("./lib/sub/jjlog");
 const PKG = require("./package.json");
@@ -96,25 +114,26 @@ class ChildProcess{
 		if(this.process) this.process.kill(sig || 'SIGINT');
 	}
 }
-let webServer, gameServer;
+let webServer, gameServers;
 
 function startServer(){
-	if(webServer) webServer.kill();
-	if(gameServer) gameServer.kill();
-
-	process.env['KKT_SV_NAME'] = SETTINGS['server-name'];
+	stopServer();
+	if(SETTINGS['server-name']) process.env['KKT_SV_NAME'] = SETTINGS['server-name'];
 	
 	webServer = new ChildProcess('W', "node", `${__dirname}/lib/Web/cluster.js`, SETTINGS['web-num-cpu']);
-	gameServer = new ChildProcess('G', "node", `${__dirname}/lib/Game/cluster.js`, 0, SETTINGS['game-num-cpu']);
+	gameServers = [];
 	
+	for(let i=0; i<SETTINGS['game-num-inst']; i++){
+		gameServers.push(new ChildProcess('G', "node", `${__dirname}/lib/Game/cluster.js`, i, SETTINGS['game-num-cpu']));
+	}
 	exports.send('server-status', getServerStatus());
 }
 function stopServer(){
-	webServer.kill();
-	gameServer.kill();
+	if(webServer) webServer.kill();
+	if(gameServers) gameServers.forEach(v => v.kill());
 }
 function getServerStatus(){
-	if(!webServer || !gameServer) return 0;
-	if(webServer.process && gameServer.process) return 2;
+	if(!webServer || !gameServers) return 0;
+	if(webServer.process && gameServers.every(v => v.process)) return 2;
 	return 1;
 }

@@ -1,3 +1,21 @@
+/**
+ * Rule the words! KKuTu Online
+ * Copyright (C) 2017 JJoriping(op@jjo.kr)
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
 var Const = require('../../const');
 var Lizard = require('../../sub/lizard');
 var DB;
@@ -42,7 +60,7 @@ exports.roundReady = function(){
 			my.game.late = false;
 			my.game.answer = $ans || {};
 			my.game.done.push($ans._id);
-			$ans.mean = ($ans.mean.length > 5) ? $ans.mean : getConsonants($ans._id, Math.round($ans._id.length / 2));
+			$ans.mean = ($ans.mean.length > 20) ? $ans.mean : getConsonants($ans._id, Math.round($ans._id.length / 2));
 			my.game.hint = getHint($ans);
 			my.byMaster('roundReady', {
 				round: my.game.round,
@@ -231,7 +249,7 @@ function getAnswer(theme, nomean){
 		if(!len) return R.go(null);
 		do{
 			pick = Math.floor(Math.random() * len);
-			if($res[pick]._id.length >= 2) if($res[pick].type == "INJEONG" || $res[pick].mean.length >= 30){
+			if($res[pick]._id.length >= 2) if($res[pick].type == "INJEONG" || $res[pick].mean.length >= 0){
 				return R.go($res[pick]);
 			}
 			$res.splice(pick, 1);
